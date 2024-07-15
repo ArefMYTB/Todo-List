@@ -32,6 +32,6 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: areftb8/pifuhdtest
-        registery: docker.io
+        registry: docker.io
         username: ${{secrets.DockerUsername}}
         password: ${{secrets.DockerPassword}}
