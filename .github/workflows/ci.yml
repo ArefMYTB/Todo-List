@@ -33,4 +33,5 @@ jobs:
       with:
         image: areftb8/pifuhdtest
         registery: docker.io
-
+        username: ${{secrets.DockerUsername}}
+        password: ${{secrets.DockerPassword}}
