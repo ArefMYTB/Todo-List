@@ -12,10 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-lates] 
+    runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v4
@@ -31,4 +28,9 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: areftb8/pifuhdtest
+        registery: docker.io
 
